@@ -9,7 +9,6 @@ This project implements a car rental system using Flask and Neo4j. The system al
 - [Setup Instructions](#setup-instructions)
 - [API Endpoints](#api-endpoints)
 - [Testing with Postman](#testing-with-postman)
-- [License](#license)
 
 ## Project Overview
 
