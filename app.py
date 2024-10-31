@@ -1,4 +1,3 @@
-# app.py
 from flask import Flask
 from routes.car_routes import car_bp
 from routes.customer_routes import customer_bp
