@@ -9,6 +9,7 @@ This project implements a car rental system using Flask and Neo4j. The system al
 - [Setup Instructions](#setup-instructions)
 - [API Endpoints](#api-endpoints)
 - [Testing with Postman](#testing-with-postman)
+- [License](#license)
 
 ## Project Overview
 
@@ -17,9 +18,9 @@ This project was created as part of the INFO212 System Development course to pra
 ## Features
 
 - CRUD operations for:
-  - Cars (e.g., add, update, delete car details)
-  - Customers (e.g., add, update, delete customer details)
-  - Employees (e.g., add, update, delete employee details)
+  - **Cars** (e.g., add, update, delete car details)
+  - **Customers** (e.g., add, update, delete customer details)
+  - **Employees** (e.g., add, update, delete employee details)
 - Renting, booking, and returning cars with status updates.
 
 ## Setup Instructions
@@ -34,28 +35,23 @@ This project was created as part of the INFO212 System Development course to pra
 
 1. **Clone the Repository:**
    ```bash
-   git clone https://github.com/YOUR_USERNAME/YOUR_REPO_NAME.git
-   cd YOUR_REPO_NAME
+   git clone https://github.com/maymarianne/car-rental-api.git
+   cd car-rental-api
    ```
 
 2. **Create a Virtual Environment:**
    ```bash
    python -m venv venv
-   source venv/bin/activate  
+   venv\Scripts\activate
    ```
 
-3. **Install Dependencies:**
-   ```bash
-   pip install -r requirements.txt
-   ```
-
-4. **Configure Neo4j Database:**
+3. **Configure Neo4j Database:**
    - Ensure Neo4j is running.
    - Update `db.py` with your Neo4j credentials if they differ from the default.
 
-5. **Run the Application:**
+4. **Run the Application:**
    ```bash
-   flask run
+   python app.py
    ```
    The API should now be running at `http://127.0.0.1:5000`.
 
@@ -70,16 +66,16 @@ Here’s a summary of available endpoints:
 - **Delete a Car**: `DELETE /cars/<car_id>` – Remove a car from the system.
 
 ### Customers
-- **Create a Customer**: `POST /customers`
-- **Read Customers**: `GET /customers`
-- **Update a Customer**: `PUT /customers/<customer_id>`
-- **Delete a Customer**: `DELETE /customers/<customer_id>`
+- **Create a Customer**: `POST /customers` – Add a new customer to the system.
+- **Read Customers**: `GET /customers` – Retrieve a list of customers.
+- **Update a Customer**: `PUT /customers/<customer_id>` – Update customer details.
+- **Delete a Customer**: `DELETE /customers/<customer_id>` – Remove a customer from the system.
 
 ### Employees
-- **Create an Employee**: `POST /employees`
-- **Read Employees**: `GET /employees`
-- **Update an Employee**: `PUT /employees/<employee_id>`
-- **Delete an Employee**: `DELETE /employees/<employee_id>`
+- **Create an Employee**: `POST /employees` – Add a new employee to the system.
+- **Read Employees**: `GET /employees` – Retrieve a list of employees.
+- **Update an Employee**: `PUT /employees/<employee_id>` – Update employee details.
+- **Delete an Employee**: `DELETE /employees/<employee_id>` – Remove an employee from the system.
 
 ### Rental Operations
 - **Order a Car**: `POST /order-car` – Book a car for a customer if available.
@@ -100,8 +96,16 @@ To test the API:
        "make": "Jaguar",
        "model": "X-Type",
        "year": 2003,
-       "location": "Downtown",
+       "location": "Bergen",
        "status": "available"
+     }
+     ```
+   - **Creating a Customer**:
+     ```json
+     {
+       "name": "Ola Nordmann",
+       "age": 40,
+       "address": "Gatevein 1, 1234 Oslo"
      }
      ```
    - **Ordering a Car**:
